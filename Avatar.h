@@ -81,6 +81,8 @@ public:
 	void mostrarCaminosPosibles();//Muestra los posibles camios
 	void mapearNuevosCaminos();//Busca nuevos caminos implementar en el punto extra
 	void imprimirSolucion();
+	bool metaEncontrada();
+	void imprimirPosicion();
 };
 // Cierro el candado
 #endif

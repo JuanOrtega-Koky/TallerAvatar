@@ -83,3 +83,15 @@ void Avatar::imprimirSolucion() {
 		cout << "[x:" << ruta[i][0] << " y:" << ruta[i][1] <<"]"<< endl;
 	}
 }
+
+bool Avatar::metaEncontrada() {
+	if (posiblesCaminosX.top() == 9 && posiblesCaminosY.top() == 9){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+void Avatar::imprimirPosicion(){
+	cout<<"[x:"<<ruta[1][0];
+}

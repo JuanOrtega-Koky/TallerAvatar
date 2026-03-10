@@ -51,7 +51,7 @@ int main() {
 	Avatar jugador(mapa);
 //Interacción de objetos
   	jugador.guardarRuta();
-  	cout<<"Hubicación actual del Avatar en el tablero: ";
+  	cout<<"Ubicación actual del Avatar en el tablero: ";
   	jugador.imprimirSolucion();
 	jugador.mapearNuevosCaminos();
 	jugador.mostrarCaminosPosibles();
