@@ -1,3 +1,10 @@
+// Curso: Fundamentos de Programación Orientada a Objetos
+// Archivo: tablero.cpp
+// Autores:
+// - Juan Manuel Ortega Leal | Código: 2535112 | juan.ortega.leal@correounivalle.edu.co
+// - María Camila Zuleta Peña | Código: 2540542 | maria.camila.zuleta@correounivalle.edu.co
+// - Juan José Peña Garcés | Código: 2538880 | juan.jose.pena@correounivalle.edu.co
+// Fecha: 10/03/2026
 // incluir la clase
 #include "Tablero.h"
 #include <vector>

@@ -48,7 +48,13 @@
  * Debería haber recibido una copia de la Licencia Pública General de GNU
  * junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>.
  */
-
+// Curso: Fundamentos de Programación Orientada a Objetos
+// Archivo: avatar.h
+// Autores:
+// - Juan Manuel Ortega Leal | Código: 2535112 | juan.ortega.leal@correounivalle.edu.co
+// - María Camila Zuleta Peña | Código: 2540542 | maria.camila.zuleta@correounivalle.edu.co
+// - Juan José Peña Garcés | Código: 2538880 | juan.jose.pena@correounivalle.edu.co
+// Fecha: 10/03/2026
 // Candado: Evita la doble declaración
 #ifndef _AVATAR_H_
 #define _AVATAR_H_
@@ -65,14 +71,14 @@ private:
 	int posX; //Posicion en las filas
 	int posY; //posicion en las columnas
 	vector<vector<int>> ruta; //almacena la posX y posY de la ruta que ha tomado el avatar
-	Tablero mapa; //modificar el codigo para que el mapa se obtiene por referencia
+	Tablero& mapa; //modificar el codigo para que el mapa se obtiene por referencia
 	stack<int> posiblesCaminosX; //Consultar sobre el manejo de las pilas acá se apilan posibles caminos en las filas
 	stack<int> posiblesCaminosY;//Consultar sobre el manejo de las pilas acá se apilan posibles caminos en las columnas
 
 	// métodos
 public:
 	// Método constructor
-	Avatar(Tablero auxmapa);//modificar el codigo para que el mapa se obtiene por referencia; Permite cargar el tablero desde un archivo.txt
+	Avatar(Tablero& auxmapa);//modificar el codigo para que el mapa se obtiene por referencia; Permite cargar el tablero desde un archivo.txt
 	void moverAvatar(); //Permite que el avatar se mueva por el laberinto siempre a la derecha
 	int getPosX(); 
 	int getPosY();
@@ -83,7 +89,6 @@ public:
 	void imprimirSolucion();
 	bool metaEncontrada();
 	void imprimirPosicion();
-	bool leerRuta(int x, int y);
 };
 // Cierro el candado
 #endif

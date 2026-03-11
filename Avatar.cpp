@@ -1,3 +1,10 @@
+// Curso: Fundamentos de Programación Orientada a Objetos
+// Archivo: avatar.cpp
+// Autores:
+// - Juan Manuel Ortega Leal | Código: 2535112 | juan.ortega.leal@correounivalle.edu.co
+// - María Camila Zuleta Peña | Código: 2540542 | maria.camila.zuleta@correounivalle.edu.co
+// - Juan José Peña Garcés | Código: 2538880 | juan.jose.pena@correounivalle.edu.co
+// Fecha: 10/03/2026
 // incluir la clase
 #include "Avatar.h"
 #include "Tablero.h"
@@ -11,20 +18,20 @@
 using namespace std;
 
 // Constructor
-Avatar::Avatar(Tablero auxmapa):mapa(auxmapa) {
+Avatar::Avatar(Tablero& auxmapa):mapa(auxmapa) {
 	//Se inicializa el avatar en la posicion 1 en la fila y 1 en la columna
 	posX = 1;
-	posY = 2;
+	posY = 1;
 	ruta.resize(0);//Se inicializa el vector de rutas
 	posiblesCaminosX.empty();//se inicializa los vectores de posibles caminos en X
 	posiblesCaminosY.empty();//se inicializa los vectores de posibles caminos en Y
 }
 
 void Avatar::mapearNuevosCaminos() {
-	guardarPosibleCamino(posX, posY + 1); // adelante
 	guardarPosibleCamino(posX, posY - 1); // atrás
 	guardarPosibleCamino(posX - 1, posY); // arriba
 	guardarPosibleCamino(posX + 1, posY); // abajo
+	guardarPosibleCamino(posX, posY + 1); // adelante
 }
 
 // Mover el Avatar
@@ -38,7 +45,7 @@ void Avatar::moverAvatar() {
 void Avatar::guardarPosibleCamino(int x, int y) {
 
 	if ((x >= 0 && x <= 9) && (y >= 0 && y <= 9)) {
-		if (mapa.getCelda(x, y) == 1 && leerRuta(x, y) == false) {
+		if (mapa.getCelda(x, y) == 1) {
 			posiblesCaminosX.push(x);
 			posiblesCaminosY.push(y);
 		}
@@ -96,11 +103,3 @@ void Avatar::imprimirPosicion(){
 	cout<<"La posicion del avatar es: ["<< posX <<","<< posY <<"]"<< endl;
 }
 
-bool Avatar::leerRuta(int x, int y){
-	for (int i=1; i<ruta.size(); i++){
-		if (ruta[i][0] == x && ruta[i][1] == y){
-			return true;
-		}
-	}
-	return false;
-}

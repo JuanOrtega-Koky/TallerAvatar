@@ -37,6 +37,13 @@
  * Debería haber recibido una copia de la Licencia Pública General de GNU
  * junto con este programa. Si no, consulte <https://www.gnu.org/licenses/>.
  */
+// Curso: Fundamentos de Programación Orientada a Objetos
+// Archivo: main.cpp
+// Autores:
+// - Juan Manuel Ortega Leal | Código: 2535112 | juan.ortega.leal@correounivalle.edu.co
+// - María Camila Zuleta Peña | Código: 2540542 | maria.camila.zuleta@correounivalle.edu.co
+// - Juan José Peña Garcés | Código: 2538880 | juan.jose.pena@correounivalle.edu.co
+// Fecha: 10/03/2026
 // Se incluye la clase
 #include "Avatar.h"
 #include "Tablero.h"
@@ -49,10 +56,8 @@ int main() {
 	mapa.cargarTablero("tablero.txt");//se carga el tablero desde un archivo plano
 	mapa.mostrarTablero();
 	Avatar jugador(mapa);
-//Interacción de objetos		
-	jugador.guardarRuta();
-  	while (jugador.metaEncontrada() == false ){	
-  		cout<<"Ubicación actual del Avatar en el tablero: ";
+	//Interacción de objetos
+  	while (jugador.metaEncontrada() == false ){
   		jugador.imprimirPosicion();
 		jugador.mapearNuevosCaminos();
 		jugador.mostrarCaminosPosibles();
