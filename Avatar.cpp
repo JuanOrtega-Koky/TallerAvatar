@@ -38,7 +38,7 @@ void Avatar::moverAvatar() {
 void Avatar::guardarPosibleCamino(int x, int y) {
 
 	if ((x >= 0 && x <= 9) && (y >= 0 && y <= 9)) {
-		if (mapa.getCelda(x, y) == 1) {
+		if (mapa.getCelda(x, y) == 1 && leerRuta(x, y) == false) {
 			posiblesCaminosX.push(x);
 			posiblesCaminosY.push(y);
 		}
@@ -93,5 +93,14 @@ bool Avatar::metaEncontrada() {
 }
 
 void Avatar::imprimirPosicion(){
-	cout<<"La posicion del avatar es: ["<< posX <<","<< posY <<"]";
+	cout<<"La posicion del avatar es: ["<< posX <<","<< posY <<"]"<< endl;
+}
+
+bool Avatar::leerRuta(int x, int y){
+	for (int i=1; i<ruta.size(); i++){
+		if (ruta[i][0] == x && ruta[i][1] == y){
+			return true;
+		}
+	}
+	return false;
 }

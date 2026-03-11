@@ -83,6 +83,7 @@ public:
 	void imprimirSolucion();
 	bool metaEncontrada();
 	void imprimirPosicion();
+	bool leerRuta(int x, int y);
 };
 // Cierro el candado
 #endif
