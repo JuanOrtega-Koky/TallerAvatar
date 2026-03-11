@@ -85,7 +85,7 @@ void Avatar::imprimirSolucion() {
 }
 
 bool Avatar::metaEncontrada() {
-	if (posiblesCaminosX.top() == 9 && posiblesCaminosY.top() == 9){
+	if (posX == 9 && posY == 9){
 		return true;
 	}else{
 		return false;
@@ -93,5 +93,5 @@ bool Avatar::metaEncontrada() {
 }
 
 void Avatar::imprimirPosicion(){
-	cout<<"[x:"<<ruta[1][0];
+	cout<<"La posicion del avatar es: ["<< posX <<","<< posY <<"]";
 }

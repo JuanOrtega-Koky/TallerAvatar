@@ -49,14 +49,16 @@ int main() {
 	mapa.cargarTablero("tablero.txt");//se carga el tablero desde un archivo plano
 	mapa.mostrarTablero();
 	Avatar jugador(mapa);
-//Interacción de objetos
-  	jugador.guardarRuta();
-  	cout<<"Ubicación actual del Avatar en el tablero: ";
-  	jugador.imprimirSolucion();
-	jugador.mapearNuevosCaminos();
-	jugador.mostrarCaminosPosibles();
-	jugador.moverAvatar();
-  	jugador.guardarRuta();
+//Interacción de objetos		
+	jugador.guardarRuta();
+  	while (jugador.metaEncontrada() == false ){	
+  		cout<<"Ubicación actual del Avatar en el tablero: ";
+  		jugador.imprimirPosicion();
+		jugador.mapearNuevosCaminos();
+		jugador.mostrarCaminosPosibles();
+		jugador.moverAvatar();
+  		jugador.guardarRuta();
+	}
   	cout<<"Ruta recorrida por el Avatar en el tablero:"<<endl;
   	jugador.imprimirSolucion();
 return 0;
